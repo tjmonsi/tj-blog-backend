@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - '-t'
+      - '$_GOOGLE_REPOSITORY_DOMAIN/$_GOOGLE_REPOSITORY_PROJECT/$_GOOGLE_REPOSITORY_FOLDER/$_TAG:$_VERSION'
+      - '-f'
+      - Dockerfile
+      - '.'
+images:
+  - '$_GOOGLE_REPOSITORY_DOMAIN/$_GOOGLE_REPOSITORY_PROJECT/$_GOOGLE_REPOSITORY_FOLDER/$_TAG:$_VERSION'
